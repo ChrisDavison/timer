@@ -1,4 +1,4 @@
-#![feature(duration_zero, duration_consts_2)]
+#![feature(duration_consts_2)]
 use clap::Clap;
 use std::io::{self, Write};
 
