@@ -12,7 +12,7 @@ impl Timer {
     pub fn new(hours: u64, minutes: u64, seconds: u64, message: Option<String>) -> Timer {
         Timer {
             duration: Duration::new(hours * 360 + minutes * 60 + seconds, 0),
-            message: message,
+            message,
         }
     }
 
