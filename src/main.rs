@@ -1,4 +1,3 @@
-#![feature(duration_consts_2)]
 use std::io::{self, Write};
 use structopt::StructOpt;
 
