@@ -3,6 +3,8 @@ authors = ["Chris Davison <c.jr.davison@gmail.com>"]
 edition = "2018"
 name = "timer"
 version = "0.3.0"
+license = "MIT"
+
 
 [dependencies]
 chrono = "~0.4"
