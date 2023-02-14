@@ -27,7 +27,7 @@ fn main() -> Result<(), std::io::Error> {
             Some(args.message.join(" "))
         },
     );
-    let reset = format!("\r{}\r", " ".repeat(80));
+    let reset = format!("\r{}\r", " ".repeat(format!("{}", timer).len()));
     let mut stdout = io::stdout();
     while !timer.finished() {
         print!("{}{}", reset, timer);
