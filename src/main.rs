@@ -6,6 +6,8 @@ mod timer;
 #[derive(StructOpt, Debug)]
 #[structopt(name = "timer")]
 struct Opts {
+    #[structopt(short, long)]
+    newline: bool,
     message: Vec<String>,
     #[structopt(short = "h", long, default_value = "0")]
     hours: u64,
@@ -27,7 +29,11 @@ fn main() -> Result<(), std::io::Error> {
             Some(args.message.join(" "))
         },
     );
-    let reset = format!("\r{}\r", " ".repeat(format!("{}", timer).len()));
+    let reset = if args.newline {
+        String::from("\n")
+    } else {
+        format!("\r{}\r", " ".repeat(format!("{}", timer).len()))
+    };
     let mut stdout = io::stdout();
     while !timer.finished() {
         print!("{}{}", reset, timer);
